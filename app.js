@@ -2,9 +2,22 @@
 let amigos = [];
 
 //funcion para recibir el nombre funcionando 
-function agregarAmigo(nombre){
-    let amigos = document.getElementById('amigo').value;
-    console.log(amigos)
+function agregarAmigo(){
+    let amigosNombre = document.getElementById('amigo').value;
+    //validando entrada
+    if(amigosNombre === ''){
+        alert('Por favor inserte un nombre');
+    }else{
+        //Agregar con un push nombres al array
+      amigos.push(amigosNombre);
+      console.log(amigos);
+      limpiarCaja;
+    }
+    return;
+}
+//funcion limpiar caja
+function limpiarCaja(){
+    document.getElementById('amigo').value = '';
 }
 
-agregarAmigo('yos');
+agregarAmigo();
